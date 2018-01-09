@@ -1,0 +1,7 @@
+/*Groupe Youlez Les Grosses*/
+
+On créé un switch dans domoticz. On associe aux switch deux actions, switch_on.sh et switch_off.sh qui écrivent "SWITCH ON" ou "SWITCH OFF" dans un fichier /tmp/switch.log
+
+On copie les deux scripts shell dans /opt/domoticz/scripts
+Le passage du switch à ON ou OFF ajoute une nouvelle ligne dans /tmp/switch.log
+
