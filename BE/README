@@ -1,7 +1,19 @@
 /*Groupe Youlez Les Grosses*/
 
-On créé un switch dans domoticz. On associe aux switch deux actions, switch_on.sh et switch_off.sh qui écrivent "SWITCH ON" ou "SWITCH OFF" dans un fichier /tmp/switch.log
+Pour compiler les binaires:
+chmod +x autogen.sh
+./autogen.sh
+./configure
+./make
 
-On copie les deux scripts shell dans /opt/domoticz/scripts
-Le passage du switch à ON ou OFF ajoute une nouvelle ligne dans /tmp/switch.log
+/!\ Des erreurs d'horodatage peuvent survenir pendant le make selon la machine dans lequel il est exécuté (Makefile modifié dans le futur). Faire un touch sur les fichiers pour régler le problème.
 
+Deux binaires switchON et switchOFF sont créés dans dans src/BE.
+	switchON <NumPin>
+	switchOFF <NumPin>
+Copier ces binaires dans /opt/domoticz/scripts. Dans Domoticz, associer au switch les actions suivantes:
+
+ON: switchON 17
+OFF: switchOFF 17
+
+(Pour une LED branchée entre le GPIO 17 et la masse)
