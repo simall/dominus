@@ -4,7 +4,7 @@ Pour compiler les binaires:
 chmod +x autogen.sh
 ./autogen.sh
 ./configure
-./make
+make
 
 /!\ Des erreurs d'horodatage peuvent survenir pendant le make selon la machine dans lequel il est exécuté (Makefile modifié dans le futur). Faire un touch sur les fichiers pour régler le problème.
 
