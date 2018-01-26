@@ -1,5 +1,5 @@
 /*Groupe Youlez Les Grosses*/
-Ajout d'un script init.d
+Utilisation de deux cartes.
 
 Pour compiler les binaires:
 Mettre à jour le PATH avec le chemin vers les fichier de configuration pour la cross-compilation. Par exemple, si buildroot est dans /root:
@@ -19,8 +19,11 @@ Deux binaires client et serveur sont créés dans dans src/BE.
 La commande en paramêtre de client est un nombre de trois chiffres. Les deux premiers chiffres correspondent au numéro de PIN et le dernier chiffre vaut 1 pour ON et 0 pour OFF.
 Par exemple, 171 envoie du courant dans la PIN 17 et 080 le retire dans la PIN 8.
 
+Sur la carte RaspberryPi serveur, copier le binaire serveur dans /usr/bin et le script de démarrage S99serveur dans /etc/init.d, puis redémarrer. La LED est branchée sur la carte serveur.
+Sur la carte RaspberryPi client, copier le bianire client dans /opt/domoticz/scripts. Domoticz tourne sur la carte client.
+Récupérer l'adresse IP de la carte serveur.
 
-Copier le binaire serveur dans /usr/bin et le bianire client dans /opt/domoticz/scripts. Copier le script de démarrage S99serveur dans /etc/init.d, puis redémarrer. Dans Domoticz, associer au switch les actions suivantes:
+Dans Domoticz, associer au switch les actions suivantes:
 
-ON: client 127.0.0.1 171
-OFF: client 127.0.0.1 170
+ON: client <IP Serveur> 171
+OFF: client <IP Serveur> 170
