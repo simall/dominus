@@ -1,9 +1,12 @@
 /*Groupe Youlez Les Grosses*/
 
 Pour compiler les binaires:
+Mettre à jour le PATH avec le chemin vers les fichier de configuration pour la cross-compilation. Par exemple, si buildroot est dans /root:
+export PATH=$PATH:/root/buildroot-2017.08/output/host/bin
+
 chmod +x autogen.sh
 ./autogen.sh
-./configure
+./configure --build x86_64-pc-linux-gnu --host arm-linux
 make
 
 /!\ Des erreurs d'horodatage peuvent survenir pendant le make selon la machine dans lequel il est exécuté (Makefile modifié dans le futur). Faire un touch sur les fichiers pour régler le problème.
