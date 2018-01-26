@@ -1,5 +1,5 @@
 MAINTAINERCLEANFILES = Makefile.in
 
-bin_PROGRAMS = switchON switchOFF
-switchON_SOURCES = switchON.c GPIO.c
-switchOFF_SOURCES = switchOFF.c GPIO.c
+bin_PROGRAMS = serveur client
+serveur_SOURCES = serveur.c GPIO.c
+client_SOURCES = client.c GPIO.c

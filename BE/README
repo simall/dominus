@@ -1,5 +1,5 @@
 /*Groupe Youlez Les Grosses*/
-Ajout d'un relais. On réalise les branchements décrits dans schema_relais.jpeg.
+Ajout d'un client serveur.
 
 Pour compiler les binaires:
 Mettre à jour le PATH avec le chemin vers les fichier de configuration pour la cross-compilation. Par exemple, si buildroot est dans /root:
@@ -12,10 +12,15 @@ make
 
 /!\ Des erreurs d'horodatage peuvent survenir pendant le make selon la machine dans lequel il est exécuté (Makefile modifié dans le futur). Faire un touch sur les fichiers pour régler le problème.
 
-Deux binaires switchON et switchOFF sont créés dans dans src/BE.
-	switchON <NumPin>
-	switchOFF <NumPin>
-Copier ces binaires dans /opt/domoticz/scripts. Dans Domoticz, associer au switch les actions suivantes:
+Deux binaires client et serveur sont créés dans dans src/BE.
+	serveur
+	client <IP> <Commande>
 
-ON: switchON 17
-OFF: switchOFF 17
+La commande en paramêtre de client est un nombre de trois chiffres. Les deux premiers chiffres correspondent au numéro de PIN et le dernier chiffre vaut 1 pour ON et 0 pour OFF.
+Par exemple, 171 envoie du courant dans la PIN 17 et 080 le retire dans la PIN 8.
+
+
+Copier le binaire serveur dans /usr/bin et le bianire client dans /opt/domoticz/scripts. Dans Domoticz, associer au switch les actions suivantes:
+
+ON: client 127.0.0.1 171
+OFF: client 127.0.0.1 170
