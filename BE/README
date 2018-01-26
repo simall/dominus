@@ -20,7 +20,7 @@ La commande en paramêtre de client est un nombre de trois chiffres. Les deux pr
 Par exemple, 171 envoie du courant dans la PIN 17 et 080 le retire dans la PIN 8.
 
 
-Copier le binaire serveur dans /usr/bin et le bianire client dans /opt/domoticz/scripts. Dans Domoticz, associer au switch les actions suivantes:
+Copier le binaire serveur dans /usr/bin et le bianire client dans /opt/domoticz/scripts. Lancer le serveur à la main: /usr/bin/serveur. Dans Domoticz, associer au switch les actions suivantes:
 
 ON: client 127.0.0.1 171
 OFF: client 127.0.0.1 170
