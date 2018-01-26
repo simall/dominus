@@ -1,5 +1,5 @@
 /*Groupe Youlez Les Grosses*/
-Ajout d'un client serveur.
+Ajout d'un script init.d
 
 Pour compiler les binaires:
 Mettre à jour le PATH avec le chemin vers les fichier de configuration pour la cross-compilation. Par exemple, si buildroot est dans /root:
@@ -20,7 +20,7 @@ La commande en paramêtre de client est un nombre de trois chiffres. Les deux pr
 Par exemple, 171 envoie du courant dans la PIN 17 et 080 le retire dans la PIN 8.
 
 
-Copier le binaire serveur dans /usr/bin et le bianire client dans /opt/domoticz/scripts. Lancer le serveur à la main: /usr/bin/serveur. Dans Domoticz, associer au switch les actions suivantes:
+Copier le binaire serveur dans /usr/bin et le bianire client dans /opt/domoticz/scripts. Copier le script de démarrage S99serveur dans /etc/init.d, puis redémarrer. Dans Domoticz, associer au switch les actions suivantes:
 
 ON: client 127.0.0.1 171
 OFF: client 127.0.0.1 170
