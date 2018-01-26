@@ -1,4 +1,5 @@
 /*Groupe Youlez Les Grosses*/
+Ajout d'un relais. On réalise les branchements décrits dans schema_relais.jpeg.
 
 Pour compiler les binaires:
 Mettre à jour le PATH avec le chemin vers les fichier de configuration pour la cross-compilation. Par exemple, si buildroot est dans /root:
@@ -18,5 +19,3 @@ Copier ces binaires dans /opt/domoticz/scripts. Dans Domoticz, associer au switc
 
 ON: switchON 17
 OFF: switchOFF 17
-
-(Pour une LED branchée entre le GPIO 17 et la masse)
